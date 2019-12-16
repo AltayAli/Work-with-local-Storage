@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header>
+    <div class="container bg-success">
+      <div class="row">
+        <div class="col-md-6 col-12 logo-part mt-3">
+          <h1><span>ONYC</span> elektron kitabları</h1>
+        </div>
+        <div class="col-md-3 col-8 mt-1">
+          <ul>
+            <li>+994 55 764 69 18</li>
+            <li>+994 51 504 84 22</li>
+            <li>irehmetov@mail.ru</li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-sm-3 col-3 form-class">
+          <form action="">
+            <select class="form-control frm form-control-sm mt-4 ml-4">
+              <option>az</option>
+              <option>ru</option>
+              <option>eng</option>
+            </select>
+          </form>
+        </div>
+        <div class="col-2"></div>
+      </div>
+    </div>
+  </header>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <img alt="photo">
+        </div>
+        <div class="col-12 col-md-6">
+          <h2></h2>
+          <table class="table">
+            <tbody>
+             
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <script src="js/operation.js"></script>
+  <script>
+
+    function createTable(selected_object) {
+      document.querySelector('img').src=selected_object['img'];
+      document.querySelector('h2').innerText = selected_object['Ad'];
+      Object.defineProperty(selected_object, 'img', { enumerable: false });
+      Object.defineProperty(selected_object, 'Ad', { enumerable: false });
+      let i = 0;
+      for (let f in selected_object) {
+        let tr = createElement('tr', null, null, null, document.getElementsByTagName('tbody')[0]);
+        let th = createElement('th', null, null, f,tr);
+        let td = createElement('td', null, null, selected_object[f],tr);
+        i++;
+      }
+    }
+   
+    let obj = JSON.parse(sessionStorage['array']);
+    createTable(obj);
+  </script>
+</body>
+
+</html>

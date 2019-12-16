@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One&display=swap');
+@media screen and(max-width:400px){
+    .form-class{
+        padding: 0;
+        
+    }
+    .frm{
+        margin: 0 !important;
+    }
+}
+body{
+    
+}
+header{
+    span{
+        font-family: 'Fredoka One', cursive;
+    }
+    li{
+        list-style: none;
+       
+    }
+    ul{
+        padding: 0;
+    }
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    color: white;
+}
+            img{
+                object-fit: contain;
+                width: 100% ;
+                height: 200px ;
+            }
+        
